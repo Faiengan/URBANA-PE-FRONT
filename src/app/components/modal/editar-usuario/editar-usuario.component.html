@@ -1,0 +1,26 @@
+<div class="modal-overlay" (click)="fecharModal()"></div>
+<div class="modal-container">
+  <div class="modal-header">
+    <h2>Editar Cartão</h2>
+    <button class="close-button" (click)="fecharModal()"><i class="bi bi-x"></i></button>
+  </div>
+  <div class="modal-content">
+    <form [formGroup]="usuarioFormEditar" (ngSubmit)="editar()">
+      <div>
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" formControlName="nome" placeholder="Nome do Usuário" required />
+      </div>
+    
+      <div>
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" formControlName="email" placeholder="E-mail do Usuário" required />
+      </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input id="senha" type="password" formControlName="senha" placeholder="Senha do Usuaário" required />
+      </div>
+    
+      <button type="submit" [disabled]="!usuarioFormEditar.valid">Editar Usuário</button>
+    </form>
+  </div>
+</div>

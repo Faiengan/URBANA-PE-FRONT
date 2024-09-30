@@ -1,0 +1,16 @@
+.layout-container {
+    display: flex;
+    height: 100vh;
+
+}
+
+.scrollable-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @media (max-width: 400px) {
+        padding: 1rem !important;
+        padding-bottom: 0px;
+    }
+}

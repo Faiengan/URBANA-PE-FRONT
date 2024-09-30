@@ -1,0 +1,259 @@
+.responsive-img {}
+
+.card-list {
+    max-width: 400px;
+    @media (max-width: 400px) {
+        max-width:340px;
+        
+    }
+
+    position: relative;
+
+    .card {
+        background-repeat: no-repeat;
+        background-size: cover !important;
+        border: 0;
+        height: 250px;
+
+        @media (max-width: 400px) {
+            height: 215px;
+            
+        }
+    }
+}
+
+.card-information {
+    border: 0;
+    box-shadow: 0 0 25px -12px rgba(31, 43, 58, .15);
+}
+
+// img {
+//     width: 300px;
+//     height: 150px;
+// }
+
+
+.card-content {
+    background-color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: 0;
+    border-radius: 0.375rem;
+    width: 100%;
+
+    .data-head {
+        background-color: var(--color-primary);
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .data-item {
+        @media (min-width: 768px) {
+            padding: 1.5rem 1.25rem;
+        }
+
+        .data-col {
+
+
+            .data-label {
+                width: 50%;
+            }
+        }
+
+
+    }
+
+}
+
+.data-item:not(:last-child) {
+    border-bottom: 1px solid #e5e9f2;
+}
+
+.data-col span:not(.data-more) {
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+a:not([href]):not([class]) {
+    & {
+        color: #4186f6;
+        text-decoration: none;
+    }
+
+    &:hover {
+      color: #4186f6bb;
+    }
+  }
+
+.data-list:not(:first-child) {
+    margin-top: 1.5rem
+}
+
+.data-item {
+    position: relative;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center
+}
+
+.data-item .icon {
+    color: #8094ae;
+    text-align: center;
+    height: 32px;
+    vertical-align: middle;
+    line-height: 32px;
+    display: inline-block
+}
+
+.data-item:not(:last-child) {
+    border-bottom: 1px solid #e5e9f2
+}
+
+.data-item[data-toggle] {
+    cursor: pointer
+}
+
+.data-item:hover .data-label {
+    color: #526484
+}
+
+.data-item:hover .data-value,
+.data-item:hover .icon {
+    color: #364a63
+}
+
+.data-col {
+    flex-grow: 1
+}
+
+.container {
+    @media (max-width: 1200px) {
+        margin: auto
+    }
+}
+
+.data-col span:not(.data-more) {
+    display: inline-block;
+    transition: color .3s
+}
+
+.data-col-end {
+    flex-grow: 0;
+    margin-left: auto
+}
+
+.data-label {
+    color: #8094ae;
+    width: 100%;
+    flex-shrink: 0
+}
+
+.data-value {
+    color: #526484;
+    font-size: .9375rem
+}
+
+.data-more {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    line-height: 28px;
+    height: 28px;
+    width: 28px;
+    display: inline-grid;
+    align-content: center
+}
+
+.data-more:before {
+    position: absolute;
+    z-index: -1;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    content: "";
+    background-color: #e5e9f2;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .3s
+}
+
+.data-item:hover .data-more:before {
+    opacity: 1;
+    height: 40px;
+    width: 40px
+}
+
+.data-more.disable:before {
+    display: none
+}
+
+.input-edit {
+    padding: 6px 10px;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    border: 1px solid #8094ae
+}
+
+@media (min-width: 1200px) and (max-width: 1359px) {
+    .data-list .data-col {
+        flex-wrap: wrap;
+    }
+
+    .data-list .data-label {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1096px) {
+    .data-list .data-col {
+        flex-direction: column !important;
+        flex-grow: inherit;
+    }
+
+    .data-list .data-label {
+        width: 100% !important;
+    }
+
+    .data-list .data-value {
+        width: 100% !important;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .cartoes {
+        flex-direction: column;
+    }
+}
+
+.header-title {
+    position: relative;
+    color: #364a63;
+}
+.header-description {
+    margin-top: 8px;
+    flex-basis: 100%;
+    margin-bottom: 0;
+    display: block;
+    font-size: 0.9rem;
+    
+}
+
+.header-title::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 30px;
+    height: 3px;
+    background-color: #4187f6;
+    border-radius: 0 50px 50px 0;
+    transition: all .5s ease-in-out;
+}

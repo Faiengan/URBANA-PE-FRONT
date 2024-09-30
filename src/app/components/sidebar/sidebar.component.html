@@ -1,0 +1,23 @@
+<div class="navbar">
+    <ul>
+        <div>
+            <img src="../../../assets/images/logovem2.png" alt="Logo" class="responsive-img">
+        </div>
+        <li class="list" *ngFor="let menu of menuItem">
+            <a 
+                [routerLink]="menu.route"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                <span class="icon"><i [class]="menu.icon"></i></span>
+                <span class="title">{{ menu.title }}</span>
+            </a>
+        </li>
+        <!-- <li class="list">
+            <a href="#">
+                <span class="icon"></span>
+                <span class="title">Sign out</span>
+            </a>
+        </li> -->
+    </ul>
+</div>

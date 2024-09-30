@@ -1,0 +1,40 @@
+<div class="modal-overlay" (click)="fecharModal()"></div>
+<div class="modal-container">
+  <div class="modal-header">
+    <h2>Cadastrar Cartão</h2>
+    <button class="close-button" (click)="fecharModal()"><i class="bi bi-x"></i></button>
+  </div>
+  <div class="modal-content">
+    <form [formGroup]="cartaoForm" (ngSubmit)="cadastrar()">
+      <div>
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" formControlName="nome" placeholder="Nome do Cartão" required />
+      </div>
+    
+      <div>
+        <label for="numero">Número:</label>
+        <input id="numero" type="text" formControlName="numero" placeholder="Número do Cartão" required />
+      </div>
+    
+      <div>
+        <label for="tipoCartao">Tipo de Cartão:</label>
+        <select id="tipoCartao" formControlName="cartaoTipo" required>
+          <option value="COMUM">Comum</option>
+          <option value="ESTUDANTE">Estudante</option>
+          <option value="TRABALHADOR">Trabalhador</option>
+        </select>
+      </div>
+    
+      <div>
+        <label for="usuario">Usuário:</label>
+        <select id="usuario" formControlName="usuarioId" required>
+          <option value="" disabled>Selecione o usuário</option>
+          <!-- Exemplo de opções de usuários (substituir por opções dinâmicas) -->
+          <option *ngFor="let usuario of usuarios$ | async" [value]="usuario.id">{{ usuario.nome }}</option>
+        </select>
+      </div>
+    
+      <button type="submit" [disabled]="!cartaoForm.valid">Cadastrar Cartão</button>
+    </form>
+  </div>
+</div>
